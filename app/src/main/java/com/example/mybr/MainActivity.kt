@@ -25,33 +25,17 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
+                    // context = this = current class name = current activity
+                    // alert dia = toast =etc =
+                    // intent = switch bw activity
+                    // navigation
                 ) {
                     receiver = MyReceiver()
-                    Greeting("Android")
-                    IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
-                        // registering the receiver
-                        // it parameter which is passed in  registerReceiver() function
-                        // is the intent filter that we have just created
-                        registerReceiver(receiver, it)
-                    }
-                }
+
+                    val k = IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED)
+                    registerReceiver(receiver, k)
+                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    MyBRTheme {
-        Greeting("Android")
     }
 }
