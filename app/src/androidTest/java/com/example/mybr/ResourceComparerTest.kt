@@ -6,6 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import org.junit.After
 import org.junit.Before
 import org.junit.Test
+import com.example.mybr.R;
 
 class ResourceComparerTest {
 
@@ -23,7 +24,7 @@ class ResourceComparerTest {
     fun validateResourceString_returnTrue() {
         val context = ApplicationProvider.getApplicationContext<Context>()
 
-        val result = resourceComparer.isEqual(context,android.R.string.ok, "OK")
+        val result = resourceComparer.isEqual(context,R.string.first_name, "india")
         assert(result).equals(true)
     }
 
@@ -31,7 +32,7 @@ class ResourceComparerTest {
     fun validateResourceString_returnFalse() {
         val context = ApplicationProvider.getApplicationContext<Context>()
 
-        val result = resourceComparer.isEqual(context, android.R.string.ok, "OK")
+        val result = resourceComparer.isEqual(context, android.R.string.ok, "OKay")
         assert(result).equals(false)
     }
 
