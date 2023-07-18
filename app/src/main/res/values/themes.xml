@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="Theme.MyBR" parent="android:Theme.Material.Light.NoActionBar" />
+    <style name="Theme.MyBR" parent="android:Theme.Material.Light" />
+
+
+    <style name="Theme.MyGreenTheme" parent="Theme.MyBR">
+        <item name="android:windowBackground">#11aa22</item>
+
+    </style>
 </resources>

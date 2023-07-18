@@ -11,10 +11,8 @@ class MyReceiver : BroadcastReceiver() {
 
         val isAirplaneModeEnabled = intent?.getBooleanExtra("state", false) ?: return
 
-        intent.putExtra("sdjhgbsadhjsdkhk","da")
 
-        intent.getStringExtra("")
-        // checking whether airplane mode is enabled or not
+         // checking whether airplane mode is enabled or not
         if (isAirplaneModeEnabled) {
             // showing the toast message if airplane mode is enabled
             Toast.makeText(context, "Airplane Mode Enabled", Toast.LENGTH_LONG).show()
@@ -24,6 +22,6 @@ class MyReceiver : BroadcastReceiver() {
         }
 
 
-      //  Toast.makeText(context,"change in airplane mode!",Toast.LENGTH_SHORT).show()
+       Toast.makeText(context,"rebooted!",Toast.LENGTH_SHORT).show()
     }
 }

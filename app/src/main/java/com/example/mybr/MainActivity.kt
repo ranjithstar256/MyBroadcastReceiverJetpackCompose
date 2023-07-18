@@ -6,12 +6,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.graphics.Color
 import com.example.mybr.ui.theme.MyBRTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +21,7 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = Color.Green
                     // context = this = current class name = current activity
                     // alert dia = toast =etc =
                     // intent = switch bw activity
@@ -32,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 ) {
                     receiver = MyReceiver()
 
-                    val k = IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED)
+                    val k = IntentFilter(Intent.ACTION_REBOOT)
                     registerReceiver(receiver, k)
                  }
             }
