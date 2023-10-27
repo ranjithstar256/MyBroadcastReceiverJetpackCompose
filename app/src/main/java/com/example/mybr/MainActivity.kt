@@ -20,16 +20,12 @@ class MainActivity : ComponentActivity() {
             MyBRTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = Color.Green
-                    // context = this = current class name = current activity
-                    // alert dia = toast =etc =
-                    // intent = switch bw activity
-                    // navigation
+                    modifier = Modifier.fillMaxSize()
+
                 ) {
                     receiver = MyReceiver()
 
-                    val k = IntentFilter(Intent.ACTION_REBOOT)
+                    val k = IntentFilter(Intent.ACTION_BATTERY_LOW)
                     registerReceiver(receiver, k)
                  }
             }
